@@ -21,10 +21,9 @@ with open(csvpath) as csvfile:
         # greatest_increase = float(row[1])
         total_counter += int(row[1])
         month_counter += 1
-        mean = statistics.mean(int(csvreader))
+                
         
-        
-    print(mean)
+    print(float(total_counter / month_counter))
     print("Financial Analysis\n")
     print("Total Months: " + str(month_counter))
     print("Total: ${}" .format(total_counter))
