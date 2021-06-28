@@ -1,4 +1,5 @@
 # Modules
+import statistics
 import os
 import csv
 
@@ -10,15 +11,20 @@ with open(csvpath) as csvfile:
     csvreader = csv.reader(csvfile, delimiter=',')
 
     # Skip header
-    csv_reader = next(csvreader)
+    csv_reader = next(csvreader, None)
 
     # Set up loop for months
     month_counter = 0
     total_counter = 0
-    for row in csvreader:
-        total_counter += float(row[1])
-        month_counter += 1
     
+    for row in csvreader:
+        # greatest_increase = float(row[1])
+        total_counter += int(row[1])
+        month_counter += 1
+        mean = statistics.mean(int(csvreader))
+        
+        
+    print(mean)
     print("Financial Analysis\n")
     print("Total Months: " + str(month_counter))
     print("Total: ${}" .format(total_counter))
