@@ -16,10 +16,11 @@ with open(csvpath) as csvfile:
     month_counter = 0
     total_counter = 0
     for row in csvreader:
+        total_counter += float(row[1])
         month_counter += 1
     
     print("Total Months: " + str(month_counter))
-    # print(total_counter)
+    print("The total is ${}" .format(total_counter))
     # total_counter = 0
     # for i in csvreader:
     #     total_counter += 1
