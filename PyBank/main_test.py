@@ -20,11 +20,8 @@ with open(csvpath) as csvfile:
 
     # Create loop for separate lists
     for row in csvreader:
-        money = row[1]
-        date = row[0]
-
-        dates.append(date)
-        profit_losses.append(money)
+        dates.append(row[0])
+        profit_losses.append(row[1])
 
     # Determine total number of months
     total_months = 0
@@ -37,10 +34,10 @@ with open(csvpath) as csvfile:
         net_total += int(row)
 
     # Determine monthly change
-    for row in range(len(profit_losses)-1):
-        monthly_change.append(profit_losses[row+1]-profit_losses[row])
+    for i in range(len(net_total)):
+        monthly_change.append(net_total[i+1]-net_total[i])
         
-print(monthly_change)
+# print(range(len(net_total)))
 print("Financial Analysis\n")
 print("Total Months: " + str(total_months))
 print("Total: $" + str(net_total))
