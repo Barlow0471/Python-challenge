@@ -19,8 +19,9 @@ with open(csvpath) as csvfile:
         total_counter += float(row[1])
         month_counter += 1
     
+    print("Financial Analysis\n")
     print("Total Months: " + str(month_counter))
-    print("The total is ${}" .format(total_counter))
+    print("Total: ${}" .format(total_counter))
     # total_counter = 0
     # for i in csvreader:
     #     total_counter += 1
