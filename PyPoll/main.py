@@ -47,6 +47,15 @@ with open(csvpath) as csvfile:
         else:
             correy_votes += 1
 
+    # Create a list of all the votes
+    votes = [khan_votes, correy_votes, li_votes, otooley_votes]
+
+    # Zip candidates into a dictionary with votes
+    dict_candidates_and_votes = dict(zip(unique_candidates, votes))
+
+    # Use max function to determine winner
+    winner = max(dict_candidates_and_votes, key=dict_candidates_and_votes.get)
+
     # Create function to return percentage of votes
     def percentage(part, whole):
          return 100 * (part)/(whole)
@@ -58,3 +67,4 @@ print(f"Khan: {int(percentage(khan_votes, total_votes))}% ({khan_votes})")
 print(f"Correy: {int(percentage(correy_votes, total_votes))}% ({correy_votes})")
 print(f"Li: {int(percentage(li_votes, total_votes))}% ({li_votes})")
 print(f"O\'Tooley: {int(percentage(otooley_votes, total_votes))}% ({otooley_votes})\n")
+print(f"Winner: {winner}")
