@@ -29,8 +29,10 @@ with open(csvpath) as csvfile:
     for vote in voter_id:
         total_votes += 1
 
+    # Create complete list of candidates
     unique_candidates = ["Khan", "Correy", "Li", "O\'Tooley"]
 
+    # Determine total number of votes each candidate won
     correy_votes = 0
     li_votes = 0
     otooley_votes = 0
@@ -45,10 +47,14 @@ with open(csvpath) as csvfile:
         else:
             correy_votes += 1
 
-print(otooley_votes)
-print(correy_votes)
-print(li_votes)            
-print(khan_votes)
-print(unique_candidates)
+    # Create function to return percentage of votes
+    def percentage(part, whole):
+         return 100 * (part)/(whole)
+
+# Print relevant data
 print(f"Election Results\n")
-print(f"Total Votes: {total_votes}")
+print(f"Total Votes: {total_votes}\n")
+print(f"Khan: {int(percentage(khan_votes, total_votes))}% ({khan_votes})")
+print(f"Correy: {int(percentage(correy_votes, total_votes))}% ({correy_votes})")
+print(f"Li: {int(percentage(li_votes, total_votes))}% ({li_votes})")
+print(f"O\'Tooley: {int(percentage(otooley_votes, total_votes))}% ({otooley_votes})\n")
