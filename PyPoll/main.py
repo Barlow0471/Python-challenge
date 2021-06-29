@@ -28,5 +28,27 @@ with open(csvpath) as csvfile:
     total_votes = 0
     for vote in voter_id:
         total_votes += 1
+
+    unique_candidates = ["Khan", "Correy", "Li", "O\'Tooley"]
+
+    correy_votes = 0
+    li_votes = 0
+    otooley_votes = 0
+    khan_votes = 0
+    for vote in candidate:
+        if vote == "Khan":
+            khan_votes += 1
+        elif vote == "Li":
+            li_votes += 1
+        elif vote == "O\'Tooley":
+            otooley_votes += 1
+        else:
+            correy_votes += 1
+
+print(otooley_votes)
+print(correy_votes)
+print(li_votes)            
+print(khan_votes)
+print(unique_candidates)
 print(f"Election Results\n")
 print(f"Total Votes: {total_votes}")
