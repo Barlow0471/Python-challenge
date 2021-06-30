@@ -1,5 +1,4 @@
 # Modules
-import statistics
 import os
 import csv
 
@@ -35,11 +34,16 @@ with open(csvpath) as csvfile:
         net_total += int(row)
 
     # Determine monthly change
-    # for row in range(len(profit_losses)-1):
-    #     monthly_change.append(profit_losses[int(row)+1]-profit_losses[int(row])
+    for i in range((len(profit_losses)-1)):
+        # monthly_change.append(int(profit_losses[i+1])-int(profit_losses[i]))
+        print(int(profit_losses[i+1])-int(profit_losses[i]))
+        # print(i)
+    #     monthly_change.append(profit_losses[row+1]-profit_losses[row])
         
+# print(profit_losses[2])
 # print(range(len(profit_losses)))
-print("Financial Analysis\n")
+print("Financial Analysis")
+print("---------------")
 print("Total Months: " + str(total_months))
 print("Total: $" + str(net_total))
 # print(dates)
