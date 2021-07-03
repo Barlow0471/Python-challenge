@@ -46,14 +46,10 @@ greatest_increase_month = monthly_change.index(greatest_increase)+1
 greatest_decrease_month = monthly_change.index(greatest_decrease)+1
 
 # Print analysis to terminal
-print(greatest_increase_month)
-print(greatest_decrease_month)
-print(greatest_decrease)
-print(greatest_increase)
 print("Financial Analysis")
 print("---------------")
-print("Total Months: " + str(total_months))
-print("Total: $" + str(net_total))
+print(f"Total Months: {total_months}")
+print(f"Total: ${net_total}")
 monthly_change_round = (sum(monthly_change))/len(monthly_change)
 print(f"Average Change: ${monthly_change_round:.2f}")
 print(f"Greatest Increase in Profits: {dates[greatest_increase_month]} (${greatest_increase})")
