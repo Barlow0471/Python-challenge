@@ -36,12 +36,26 @@ with open(csvpath) as csvfile:
     # Determine monthly change
     for i in range((len(profit_losses)-1)):
         monthly_change.append(int(profit_losses[i+1])-int(profit_losses[i]))
-        
+
+#Declare variable for greatest increase and decrease       
+greatest_increase = max(monthly_change)
+greatest_decrease = min(monthly_change)
+
+#Determine months for greatest increase and decrease
+greatest_increase_month = monthly_change.index(greatest_increase)+1
+greatest_decrease_month = monthly_change.index(greatest_decrease)+1
+
+
+print(greatest_increase_month)
+print(greatest_decrease_month)
+print(greatest_decrease)
+print(greatest_increase)
 print("Financial Analysis")
 print("---------------")
 print("Total Months: " + str(total_months))
 print("Total: $" + str(net_total))
 monthly_change_round = (sum(monthly_change))/len(monthly_change)
 print(f"Average Change: ${monthly_change_round:.2f}")
-# print(dates)
+print(f"Greatest Increase in Profits: {dates[greatest_increase_month]} (${greatest_increase})")
+print(f"Greatest Decrease in Profits: {dates[greatest_decrease_month]} (${greatest_decrease})")
 # print(profit_losses)
