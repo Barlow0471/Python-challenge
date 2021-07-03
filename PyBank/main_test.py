@@ -21,7 +21,7 @@ with open(csvpath) as csvfile:
     for row in csvreader:
 
         dates.append(row[0])
-        profit_losses.append(row[1])
+        profit_losses.append(int(row[1]))
 
     # Determine total number of months
     total_months = 0
@@ -35,18 +35,13 @@ with open(csvpath) as csvfile:
 
     # Determine monthly change
     for i in range((len(profit_losses)-1)):
-        # monthly_change.append(int(profit_losses[i+1])-int(profit_losses[i]))
-        monthly_change = int(profit_losses[i+1])-int(profit_losses[i])
-        # print(monthly_change)
-        # print(i)
-    #     monthly_change.append(profit_losses[row+1]-profit_losses[row])
+        monthly_change.append(int(profit_losses[i+1])-int(profit_losses[i]))
         
-# print(profit_losses[2])
-# print(range(len(profit_losses)))
 print("Financial Analysis")
 print("---------------")
 print("Total Months: " + str(total_months))
 print("Total: $" + str(net_total))
-print(float(86/monthly_change))
+monthly_change_round = (sum(monthly_change))/len(monthly_change)
+print(f"Average Change: ${monthly_change_round:.2f}")
 # print(dates)
 # print(profit_losses)
