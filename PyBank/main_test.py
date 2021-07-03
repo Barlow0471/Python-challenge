@@ -36,7 +36,8 @@ with open(csvpath) as csvfile:
     # Determine monthly change
     for i in range((len(profit_losses)-1)):
         # monthly_change.append(int(profit_losses[i+1])-int(profit_losses[i]))
-        print(int(profit_losses[i+1])-int(profit_losses[i]))
+        monthly_change = int(profit_losses[i+1])-int(profit_losses[i])
+        # print(monthly_change)
         # print(i)
     #     monthly_change.append(profit_losses[row+1]-profit_losses[row])
         
@@ -46,5 +47,6 @@ print("Financial Analysis")
 print("---------------")
 print("Total Months: " + str(total_months))
 print("Total: $" + str(net_total))
+print(float(86/monthly_change))
 # print(dates)
 # print(profit_losses)

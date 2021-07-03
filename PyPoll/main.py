@@ -61,10 +61,13 @@ with open(csvpath) as csvfile:
          return 100 * (part)/(whole)
 
 # Print relevant data
-print(f"Election Results\n")
-print(f"Total Votes: {total_votes}\n")
+print(f"Election Results")
+print("------------------")
+print(f"Total Votes: {total_votes}")
+print("------------------")
 print(f"Khan: {int(percentage(khan_votes, total_votes))}% ({khan_votes})")
 print(f"Correy: {int(percentage(correy_votes, total_votes))}% ({correy_votes})")
 print(f"Li: {int(percentage(li_votes, total_votes))}% ({li_votes})")
-print(f"O\'Tooley: {int(percentage(otooley_votes, total_votes))}% ({otooley_votes})\n")
+print(f"O\'Tooley: {int(percentage(otooley_votes, total_votes))}% ({otooley_votes})")
+print("------------------")
 print(f"Winner: {winner}")
