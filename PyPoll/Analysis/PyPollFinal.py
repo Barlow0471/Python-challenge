@@ -73,7 +73,7 @@ print("------------------")
 print(f"Winner: {winner}")
 
 # Print analysis to text document
-f = open("PyPoll.txt", "w")
+f = open("Analysis","PyPoll.txt", "w")
 f.write(f"Election Results\n")
 f.write("-------------------------\n")
 f.write(f"Total Votes: {total_votes}\n")
